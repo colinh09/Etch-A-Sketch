@@ -8,26 +8,24 @@ h1.style.textAlign = "center";
 h1.textContent = "Etch-A-Sketch by Colin Hwang";
 heading.appendChild(h1);
 
-const container = document.createElement("#container");
+const container = document.querySelector("#container");
 
-const grid = document.createElement("#grid");
+const grid = document.querySelector("#grid");
 
 function createGrid(size)
 {
-    grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     for (let i = 0; i < size * size; i++)
     {
         let div = document.createElement("div");
         div.classList.add('cell');
-        div.style.width = `${size}px`;
-        div.style.height = `${size}px`;
         grid.appendChild(div);
     }
+    grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 }
 
 container.appendChild(grid);
 
-createGrid(16);
+createGrid(5);
 
 
